@@ -1,11 +1,3 @@
 #!/bin/bash
-
-# Get the name of the C file from the environment variable CFILE
-cfile=$CFILE
-
-# Create the name of the output file with the .s extension
-sfile=${cfile%.c}.s
-
-# Generate the assembly code and save it to the output file
-gcc -S -masm=intel "$cfile" -o "$sfile"
+gcc -S -masm=intel $CFILE
 
