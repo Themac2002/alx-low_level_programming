@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _strspn - Entry point
  * @s: input
@@ -26,16 +25,4 @@ unsigned int _strspn(char *s, char *accept)
 		s++;
 	}
 	return (n);
-}
-
-int main(void)
-{
-    char s[] = "hello, world!";
-    char accept[] = "abcdefghijklmnopqrstuvwxyz";
-    unsigned int n;
-
-    n = _strspn(s, accept);
-    printf("%u\n", n);
-
-    return (0);
 }
