@@ -1,34 +1,20 @@
-#include <stdio.h>
-#include <string.h>
-
+#include "main.h"
 /**
- * my_memcpy - a function that copies memory area
- * @dest: memory where is stored
- * @src: memory where is copied
- * @n: number of bytes
- *
- * Return: copied memory with n bytes changed
+ * _strchr - Entry point
+ * @s: input
+ * @c: input
+ * Return: Always 0 (Success)
  */
-void *my_memcpy(void *dest, const void *src, size_t n)
+char *_strchr(char *s, char c)
 {
-    char *dest_ptr = (char *)dest;
-    const char *src_ptr = (const char *)src;
-
-    for (size_t i = 0; i < n; i++)
-    {
-        *(dest_ptr + i) = *(src_ptr + i);
+    while (*s != '\0') {
+        if (*s == c) {
+            return s;
+        }
+        s++;
     }
-
-    return dest;
-}
-
-int main()
-{
-    char src[] = "Hello world!";
-    char dest[sizeof(src)];
-
-    my_memcpy(dest, src, sizeof(src));
-    printf("Copied string: %s\n", dest);
-
-    return 0;
+    if (*s == c) {
+        return s;
+    }
+    return NULL;
 }
